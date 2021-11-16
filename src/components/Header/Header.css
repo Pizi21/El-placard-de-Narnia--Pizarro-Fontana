@@ -1,0 +1,16 @@
+.Header {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    min-height: 30vh;
+    border: 10px solid rgb(238, 230, 230);
+    flex-direction: column;
+    background-image: url(imagenHeader.jpg);
+}
+
+.imagenHeader {
+    width: 80%;
+    height: fit-content;
+}

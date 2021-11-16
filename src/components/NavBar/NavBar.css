@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(211, 238, 194);
+}
+
+.container ul {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+li {
+    margin: 10px;
+    list-style-type: none;
+    padding: 30px;
+}
+
+.cartIcon {
+    display: flex;
+    margin-top: 50px;
+}

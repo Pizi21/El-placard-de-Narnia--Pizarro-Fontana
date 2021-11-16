@@ -1,0 +1,14 @@
+.footer {
+    background-color: rgb(205, 230, 189);
+    height: 50px;
+}
+
+.cards {
+    display: flex;
+}
+
+.headerPosition {
+    display: flex;
+    justify-content: center;
+    background-color: wheat;
+}
