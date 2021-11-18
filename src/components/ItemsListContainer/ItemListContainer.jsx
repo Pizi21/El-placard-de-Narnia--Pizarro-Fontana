@@ -1,16 +1,31 @@
+import UserCard from "../UserCard/UserCard";
+import imagenCamisa1 from "../../media/imagenCamisa1.jpeg";
+import camisaAzul from "../../media/camisaAzul.jpeg";
+import camisaRoja from "../../media/camisaRoja.jpeg";
 
 
-
-const itemListContainer= () =>{
-    return(
-        <div>
-            
-            <ul>
-                <li></li>
-            </ul>
-            
-        </div>
+const ItemListContainer= (props) => {
+    return (
+        <><div>{props.greeting}</div>
+        <div className="cards">
+            <UserCard
+                item="Camisa cudrille"
+                price="$700"
+                size="M"
+                img={imagenCamisa1} />
+            <UserCard
+                item="Camisa azul"
+                price="$700"
+                size="M"
+                img={camisaAzul} />
+            <UserCard
+                item="Camisa Roja"
+                price="$700"
+                size="M"
+                img={camisaRoja} />
+        </div></>
+       
     );
 };
 
-export default itemListContainer
+export default ItemListContainer
