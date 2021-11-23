@@ -1,14 +1,16 @@
 
-import React, { Component, Fragment } from "react";
+import React, {Fragment } from "react";
 import "./styles.css";
 //components
 import ItemListContainer from "./components/ItemsListContainer/ItemListContainer";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
+import ItemCount from "./components/ItemCount/ItemCount";
 
 
-class App extends Component {
-  render() {
+const App = () =>  {
+  
+
     return (
       <Fragment>
         <div>
@@ -21,10 +23,13 @@ class App extends Component {
           />
         </div>
         <ItemListContainer greeting={'Hola Maria Florencia'}/>
+       <div>
+       <ItemCount/>
+       </div>
         <div className="footer"></div>
       </Fragment>
     );
-  }
+  
 }
 
 export default App;
