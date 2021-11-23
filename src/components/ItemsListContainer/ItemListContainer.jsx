@@ -4,9 +4,9 @@ import camisaAzul from "../../media/camisaAzul.jpeg";
 import camisaRoja from "../../media/camisaRoja.jpeg";
 
 
-const ItemListContainer= (props) => {
+const ItemListContainer= ({greeting}) => {
     return (
-        <><div>{props.greeting}</div>
+        <><div>{greeting}</div>
         <div className="cards">
             <UserCard
                 item="Camisa cudrille"
