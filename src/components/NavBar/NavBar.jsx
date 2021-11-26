@@ -1,20 +1,28 @@
-
 import CartWidget from "../cartWidget";
 import "./NavBar.css";
 
-const NavBar= () =>{
-    return(
-        <nav className="container">
-            
-            <ul>
-                <li><a href="https://www.instagram.com/feria_garage_sale/?hl=en">Home</a></li>
-                <li><a href="https://www.instagram.com/feria_garage_sale/?hl=en">Productos</a></li>
-                <li><a href="https://www.instagram.com/feria_garage_sale/?hl=en">FAQ</a></li>
-                <li><a href="https://www.instagram.com/feria_garage_sale/?hl=en">Carrito</a></li>
-            </ul>
-            <CartWidget />
-        </nav>
-    );
+import { Link } from "react-router-dom";
+
+const NavBar = () => {
+  return (
+    <nav className="container">
+      <ul className="containerUl">
+        <Link activeClassName="active" to="/">
+          Home
+        </Link>
+        <Link activeClassName="active" to="/FAQ">
+          FAQ
+        </Link>
+        <Link activeClassName="active" to="/Productos">
+          Productos
+        </Link>
+        <Link activeClassName="active" to="/Carrito">
+          Carrito
+        </Link>
+      </ul>
+      <CartWidget />
+    </nav>
+  );
 };
 
-export default NavBar
+export default NavBar;

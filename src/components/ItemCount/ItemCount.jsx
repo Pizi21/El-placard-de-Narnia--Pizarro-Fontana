@@ -1,13 +1,13 @@
 import React, {useState } from "react";
 import "./itemCount.css";
 
-const stock= 10;
+//const stock= 10;
 
-const ItemCount = () => {
+const ItemCount = ({stock, initial}) => {
 
     
 
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(initial);
 
     const handlerCounterUp =()=>{
         if ( counter < stock ){

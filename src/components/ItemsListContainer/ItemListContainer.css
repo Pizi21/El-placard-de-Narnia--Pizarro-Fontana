@@ -1,0 +1,10 @@
+.greeting {
+    background-color: burlywood;
+    color: cadetblue;
+    font-size: 20px;
+    font-style: italic;
+    padding-top: 5px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    height: 30px;
+}

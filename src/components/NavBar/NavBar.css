@@ -1,23 +1,37 @@
 .container {
     display: flex;
     justify-content: center;
-    background-color: rgb(211, 238, 194);
+    background-color: rgb(243, 163, 117);
 }
 
-.container ul {
+.containerUl {
     display: flex;
     justify-content: space-around;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    width: 100%;
 }
 
-li {
+.containerUl li {
+    list-style-type: none;
+    color: beige;
+}
+
+.Link {
+    color: white;
+}
+
+.active {
+    background-color: red;
+    padding: 10px;
+}
+
+
+/*li {
     margin: 10px;
     list-style-type: none;
     padding: 30px;
-}
+}*/
 
-.cartIcon {
+l .cartIcon {
     display: flex;
     margin-top: 50px;
 }

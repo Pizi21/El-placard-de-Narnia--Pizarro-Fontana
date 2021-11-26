@@ -1,16 +1,17 @@
 .Header {
-    color: white;
+    color: rgb(245, 239, 239);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    min-height: 30vh;
-    border: 10px solid rgb(238, 230, 230);
     flex-direction: column;
-    background-image: url(imagenHeader.jpg);
+    background-color: rgb(245, 182, 146);
 }
 
-.imagenHeader {
-    width: 80%;
-    height: fit-content;
+.divImagen {
+    border-style: double;
+}
+
+img {
+    width: 200px;
+    margin-bottom: 10px;
 }

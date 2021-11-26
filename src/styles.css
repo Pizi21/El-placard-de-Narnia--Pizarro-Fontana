@@ -1,5 +1,9 @@
+#root {
+    background-color: rgb(223, 208, 149);
+}
+
 .footer {
-    background-color: rgb(205, 230, 189);
+    background-color: burlywood;
     height: 50px;
 }
 
@@ -8,7 +12,5 @@
 }
 
 .headerPosition {
-    display: flex;
     justify-content: center;
-    background-color: wheat;
 }
