@@ -1,32 +1,36 @@
-/*import UserCard from "../UserCard/UserCard";
-import imagenCamisa1 from "../../media/imagenCamisa1.jpeg";
-import camisaAzul from "../../media/camisaAzul.jpeg";
-import camisaRoja from "../../media/camisaRoja.jpeg"; */
+//css
 import "./ItemListContainer.css"
-import ItemCount from "../ItemCount/ItemCount"
+
+//components
+//import ItemCount from "../ItemCount/ItemCount" 
+import ItemList from "./ItemList/ItemList";
+
+import React ,{useEffect, useState} from 'react'
+
 
 
 const ItemListContainer= ({greeting}) => {
+    
+    {/*const addToCart = (counter) =>{
+        let prod;
+        counter > 1 ? prod = 'productos' : prod= 'producto';
+        alert (`ingresaste ${counter} ${prod} al carrito`)
+    } */}
+
+    const [users, setUsers] = useState([]);
+    console.log("State",users)
+
+    useEffect(()=> {
+        fetch('https://jsonplaceholder.typicode.com/users')
+           .then((response)=> response.json ())
+           .then((json)=> setUsers(json))
+    }, []);
+
     return (
         <><div className="greeting">{greeting}</div>
-       <ItemCount stock={5} initial={0} />
-       {/*<div className="cards">
-            <UserCard
-                item="Camisa cudrille"
-                price="$700"
-                size="M"
-                img={imagenCamisa1} />
-            <UserCard
-                item="Camisa azul"
-                price="$700"
-                size="M"
-                img={camisaAzul} />
-            <UserCard
-                item="Camisa Roja"
-                price="$700"
-                size="M"
-                img={camisaRoja} />
-    </div>*/}</> 
+       {/*<ItemCount stock={5} initial={0} anAdd={addToCart}/> */}
+       <ItemList  users={users} />
+       </> 
     );
 };
 
