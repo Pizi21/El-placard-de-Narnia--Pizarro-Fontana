@@ -1,9 +1,11 @@
 import React from 'react'
+import ItemListContainer from '../components/ItemsListContainer/ItemListContainer'
 
 const Home = () => {
     return (
         <div>
-            <h1>HOME</h1>
+           
+            <ItemListContainer greeting={"Hola Maria Florencia"} />
         </div>
     )
 }

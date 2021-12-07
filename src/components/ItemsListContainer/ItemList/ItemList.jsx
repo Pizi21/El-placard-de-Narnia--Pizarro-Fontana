@@ -1,31 +1,27 @@
-
-import Item from "./Item/Item"
-
+import ItemDetail from "../../ItemDetail/ItemDetail";
 
 
-const ItemList = ({users}) => {
+import { Link } from "react-router-dom";
 
-  
+const ItemList = ({ users }) => {
+  return (
+    <div>
+      <h1> Productos</h1>
 
-    return (
-        <div>
-            <h1> Item List</h1>
-            
-            {users.map((user)=> {
+      {users.map((user) => {
+        return (
+          <div key={user.id}>
+        
+            <Link to={`/detail/${user.id}`}>
+              <ItemDetail data={user} />
+            </Link>
 
-            return(
+            {/*<Item data={user} key={user.id} />*/ }
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-            <Item data={user} key={user.id} />)
-            
-            })}
-
-            
-            
-        </div>
-    )
-}
-
-
-export default ItemList
-
-
+export default ItemList;

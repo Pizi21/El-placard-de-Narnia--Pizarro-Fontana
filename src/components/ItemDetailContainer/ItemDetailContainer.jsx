@@ -1,38 +1,32 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import "../ItemsListContainer/ItemList/Item/Item.css";
 
-import React ,{useEffect, useState} from 'react';
+import { useParams } from 'react-router';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
-//react dom
-import { Link } from 'react-router-dom';
+const ItemDetailContainer=()=> {
+  let id = useParams();
 
-const ItemDetailContainer = () => {
-    const [detail, setDetail] = useState([]);
-    console.log("State",detail)
+  let userID = id.id;
 
-    useEffect(()=> {
-        fetch('https://jsonplaceholder.typicode.com/users')
-           .then((response)=> response.json ())
-           .then((json)=> setDetail(json))
-    }, []);
+  const [user, setUser] = useState([]);
 
+  useEffect(() => {
+    axios(`https://jsonplaceholder.typicode.com/users/${userID}`).then((res) =>
+      setUser(res.data)
+    );
+  }, [userID]);
 
-    return (
-        <div>
-            <div className='CharacterList-container'>
-      {detail.map((det) => {
-        // console.log('id', det.det_id);
-        return (
-          <div key={det.det_id}>
-            <Link to={`/detail/${det.det_id}`}>
-              <ItemDetail data={det} />
-            </Link>
-          </div>
-        );
-      })}
+  return (
+    <div className='CharacterList-detail'>
+      {console.log("hola")}
+    
+        <ItemDetail data={user}/>
+    
+      
     </div>
-            
-        </div>
-    )
+  );
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

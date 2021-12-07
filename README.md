@@ -1,3 +1,17 @@
+# Proyecto e-commerce: "El placard de Narnia"
+
+Este proyecto sera un e-commerce de venta de Indumentaria.
+
+# Technologies
+
+"axios": "^0.24.0",
+"react": "^17.0.2",
+"react-dom": "^17.0.2",
+"react-router-dom": "^6.0.2",
+"react-scripts": "4.0.3",
+"semantic-ui-css": "^2.4.1",
+"semantic-ui-react": "^2.0.4",
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

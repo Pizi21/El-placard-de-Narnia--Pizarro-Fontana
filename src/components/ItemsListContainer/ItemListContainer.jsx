@@ -11,11 +11,11 @@ import React ,{useEffect, useState} from 'react'
 
 const ItemListContainer= ({greeting}) => {
     
-    {/*const addToCart = (counter) =>{
+    /*const addToCart = (counter) =>{
         let prod;
         counter > 1 ? prod = 'productos' : prod= 'producto';
         alert (`ingresaste ${counter} ${prod} al carrito`)
-    } */}
+    } */ 
 
     const [users, setUsers] = useState([]);
     console.log("State",users)
