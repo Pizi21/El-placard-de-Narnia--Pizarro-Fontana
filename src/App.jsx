@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
 import FAQ from "./views/FAQ";
 import Productos from "./views/Productos";
-import Carrito from "./views/Carrito";
+import Cart from "./views/Cart";
 
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
@@ -32,7 +32,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/FAQ" element={<FAQ />} />
           <Route path="/Productos" element={<Productos />} />
-          <Route path="/Carrito" element={<Carrito />} />
+          <Route path="/Cart" element={<Cart />} />
           <Route path="/detail/:id" element={<ItemDetailContainer />} />
         </Routes>
         

@@ -1,4 +1,4 @@
-import ItemDetail from "../../ItemDetail/ItemDetail";
+import Item from "./Item/Item"
 
 
 import { Link } from "react-router-dom";
@@ -13,10 +13,10 @@ const ItemList = ({ users }) => {
           <div key={user.id}>
         
             <Link to={`/detail/${user.id}`}>
-              <ItemDetail data={user} />
+              <Item data={user} key={user.id} />
             </Link>
 
-            {/*<Item data={user} key={user.id} />*/ }
+            
           </div>
         );
       })}
