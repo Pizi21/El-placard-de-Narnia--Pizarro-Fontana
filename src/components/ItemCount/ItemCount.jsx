@@ -4,7 +4,7 @@ import "./itemCount.css";
 
 //const stock= 10;
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd, changeButton}) => {
 
     
 
@@ -27,7 +27,7 @@ const handlerOnAdd =()=>{
   onAdd(counter)
   setCounter(0)
 }
-console.log(onAdd)
+
 
     return (
         

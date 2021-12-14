@@ -1,35 +1,58 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Card, Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Card, Image } from "semantic-ui-react";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext} from "../../CartContext/CartContext";
 
-const ItemDetail = ({ data }) => {
 
-  const [counterValue, setCounterValue] = useState();
+const ItemDetail = ({ item }) => {
 
-  const addToCart = (counter) => {
-    setCounterValue(counter);
+  const [changeButton, setChangeButton] = useState(false);
+  const { addToCart} = useCartContext ()
 
-    /*let prod;
-        counter > 1 ? prod = 'productos' : prod= 'producto';
-        alert (`ingresaste ${counter} ${prod} al carrito`) */
+  const onAdd = (quantity) => {
+    addToCart (item, quantity)
+    setChangeButton (true)
+    alert (`Agregaste : ${quantity} productos`)
   };
-  let navigate = useNavigate();
+
+
 
   return (
     <div className="UserCard">
-      {console.log(data)}
+      {console.log(item)}
 
       <Card>
         <Card.Content>
-          <Card.Header> {data.id} </Card.Header>
-          <Card.Meta>{data.name}</Card.Meta>
-          <Card.Description>{data.adress}</Card.Description>
-        </Card.Content>
+        <Image src={item.img} wrapped ui={false} />
+
+         
+          <Card.Header>{`${item.name}`}</Card.Header>
+          <Card.Header>${`${item.price}`}</Card.Header>
+          <Card.Description> Talle: {item.size}</Card.Description>
+      
+      <div>
+        {
+        !changeButton &&
+        
+      <ItemCount stock={5} initial={0} onAdd={onAdd} changeButton={changeButton} />}
+
+      {
+        changeButton &&
+        <div>
+          <Link to='/'>
+          <button className="ui button"> Continuar Compra </button>
+          </Link>
+
+          <Link to ='/cart'>
+          <button className="ui button"> Finalizar Compra </button>
+          </Link>
+        </div>
+      }
+      </div>
+      </Card.Content>
       </Card>
-      <ItemCount stock={5} initial={0} onAdd={addToCart} />
-      <button onClick={()=> navigate(`/cart`)} class="ui button"> Finalizar Compra </button>
     </div>
-  );
-};
+  )
+}
 export default ItemDetail;

@@ -1,26 +1,16 @@
 import Item from "./Item/Item"
 
 
-import { Link } from "react-router-dom";
 
-const ItemList = ({ users }) => {
+
+function ItemList  ({ items })  {
+  console.log("itemList", items)
   return (
-    <div>
-      <h1> Productos</h1>
-
-      {users.map((user) => {
-        return (
-          <div key={user.id}>
-        
-            <Link to={`/detail/${user.id}`}>
-              <Item data={user} key={user.id} />
-            </Link>
-
-            
-          </div>
-        );
-      })}
-    </div>
+  <>
+      
+      {items.map( item =>  <Item items={item} key={item.id} />) }
+     
+      </>
   );
 };
 
