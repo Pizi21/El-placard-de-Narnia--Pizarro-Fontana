@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, Image } from "semantic-ui-react";
 import ItemCount from "../ItemCount/ItemCount";
 import { useCartContext} from "../../CartContext/CartContext";
+import Swal from 'sweetalert2'
 
 
 const ItemDetail = ({ item }) => {
@@ -13,7 +14,10 @@ const ItemDetail = ({ item }) => {
   const onAdd = (quantity) => {
     addToCart (item, quantity)
     setChangeButton (true)
-    alert (`Agregaste : ${quantity} productos`)
+    Swal.fire({
+      title: `You added : ${quantity}`,
+      icon: `success`
+    })
   };
 
 

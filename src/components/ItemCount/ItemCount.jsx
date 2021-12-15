@@ -1,5 +1,6 @@
 import React, {useState } from "react";
 import "./itemCount.css";
+
 //import { Card, Image } from 'semantic-ui-react'
 
 //const stock= 10;
