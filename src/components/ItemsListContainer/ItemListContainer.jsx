@@ -38,8 +38,9 @@ function ItemListContainer({ greeting }) {
   return (
     <>
       <div className="greeting">{greeting}</div>
-
-      {loading ? <h2> Loading </h2> : <ItemList items={items} />}
+      <div className="itemListCards">
+        {loading ? <h2> Loading </h2> : <ItemList items={items} />}
+      </div>
     </>
   );
 }
