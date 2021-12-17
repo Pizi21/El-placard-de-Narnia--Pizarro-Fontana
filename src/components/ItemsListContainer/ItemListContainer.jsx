@@ -1,53 +1,47 @@
 //css
-import "./ItemListContainer.css"
+import "./ItemListContainer.css";
 
+//FIRESTORE
+import { collection, query, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
 
 //components
 
 import ItemList from "./ItemList/ItemList";
-import getFetch from "../services/getFetch";
+//import getFetch from "../services/getFetch";
 
-import React ,{useEffect, useState} from 'react'
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+//import { useParams } from "react-router-dom";
 
+function ItemListContainer({ greeting }) {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  /*const { categoryID } = useParams(); */
 
-function ItemListContainer ({greeting}) {
-    
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState (true)
+  console.log(items);
 
-    const {categoryID}= useParams ()
+  useEffect(() => {
+    const getItems = async () => {
+      const q = query(collection(db, "prendas"));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setItems(docs);
+      setLoading(false);
+    };
+    getItems();
+  }, []);
 
+  return (
+    <>
+      <div className="greeting">{greeting}</div>
 
-    useEffect(()=> {
-        if (categoryID){
-            getFetch
-            .then(res =>{
-                setItems (res.filter(prod => prod.category))
-            })
+      {loading ? <h2> Loading </h2> : <ItemList items={items} />}
+    </>
+  );
+}
 
-            .catch((err) => console.log (err))
-            .finally (() => setLoading (false))
-
-        } else{
-            getFetch
-            .then ( res => {
-                setItems(res)
-            })
-            .catch((err) => console.log (err))
-            .finally (() => setLoading (false))
-        }
-    }, [categoryID]);
-
-    return (
-        <><div className="greeting">{greeting}</div>
-
-        { loading ? <h2> Loading </h2> : <ItemList  items={items} /> }
-       
-       
-       </> 
-    );
-};
-
-export default ItemListContainer
+export default ItemListContainer;
