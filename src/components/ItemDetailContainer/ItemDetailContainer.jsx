@@ -37,7 +37,7 @@ const ItemDetailContainer = () => {
   return (
     <div className="CharacterList-detail">
       {itemFiltered.map((item) => {
-        return <ItemDetail item={itemFiltered} key={itemFiltered.id} />;
+        return <ItemDetail item={item} key={item.id} />;
       })}
     </div>
   );
