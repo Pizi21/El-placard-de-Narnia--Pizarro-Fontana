@@ -1,38 +1,56 @@
+import { useCartContext } from "../CartContext/CartContext";
+import { Link } from "react-router-dom";
 
-import { useCartContext} from "../CartContext/CartContext";
-import { Link } from 'react-router-dom';
+import { Button } from "semantic-ui-react";
 
-import { Button } from 'semantic-ui-react';
-
+//CSS
+import "./Cart.css";
 
 const Cart = () => {
-    
+  const { cartList, emptyCart, deleteFromCart, totalPrice } = useCartContext();
+  console.log("cart list", cartList);
 
-    const {cartList, emptyCart, deleteFromCart, totalPrice}= useCartContext();
-    console.log("cart list", cartList)
+  return (
+    <>
+      {cartList.length === 0 && <h2> Tu Carrito esta vacio TT-TT </h2>}
+      {cartList.length > 0 && (
+        <div className="detalleCarrito">
+          {" "}
+          {cartList.map((obj) => (
+            <div key={obj.item.id}>
+              <img
+                style={{ width: "100px" }}
+                src={obj.item.img}
+                alt={obj.item.name}
+              />
 
-  
-    return (
-        <>
-        { cartList.length === 0 &&  <p> Carrito vacio </p>}
-        { cartList.length > 0 &&
-        <div> {cartList.map(obj=> (
-            < div key={obj.item.id} >
-        <div>< img src={obj.item.img} alt={obj.item.name}/></div>
-        <p> {obj.item.name}</p>
-        <p> * {obj.quantity} </p>
-        <p> {obj.item.price * obj.quantity}</p>
-        
-        <div> <Button onClick={()=> deleteFromCart (obj.item.id, obj.quantity)}> Eliminar </Button> </div>
-    </div>
-    ))}
-
-    <div><Link to="/"> <Button onClick={emptyCart}> Vaciar Carrito</Button> </Link> </div>
-    <div> <p> Precio Total: ${totalPrice()}</p></div>
-</div>
-       }
-       </> )
-    
+              <div className="descripcionCarrito">
+                <p> {obj.item.type}</p>
+                <p> Unidad: {obj.quantity} </p>
+                <p> Precio: ${obj.item.price * obj.quantity}</p>{" "}
+                <Button
+                  onClick={() => deleteFromCart(obj.item.id, obj.quantity)}
+                >
+                  {" "}
+                  Eliminar{" "}
+                </Button>{" "}
+              </div>
+            </div>
+          ))}
+          <div className="vaciarCarrito">
+            <Link to="/">
+              {" "}
+              <Button onClick={emptyCart}> Vaciar Carrito</Button>{" "}
+            </Link>{" "}
+          </div>
+          <div className="precioTotal">
+            {" "}
+            <p> Precio Total: ${totalPrice()}</p>
+          </div>
+        </div>
+      )}
+    </>
+  );
 };
 
-export default Cart
+export default Cart;
