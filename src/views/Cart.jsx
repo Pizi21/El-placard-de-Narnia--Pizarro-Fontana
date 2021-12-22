@@ -6,12 +6,16 @@ import { Button } from "semantic-ui-react";
 //CSS
 import "./Cart.css";
 
+//componente
+import Form from "../components/Form/Form";
+
 const Cart = () => {
   const { cartList, emptyCart, deleteFromCart, totalPrice } = useCartContext();
   console.log("cart list", cartList);
 
   return (
     <>
+      <Form />
       {cartList.length === 0 && <h2> Tu Carrito esta vacio TT-TT </h2>}
       {cartList.length > 0 && (
         <div className="detalleCarrito">
