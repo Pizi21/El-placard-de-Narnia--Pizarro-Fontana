@@ -70,7 +70,7 @@ const Form = () => {
           value={values.email}
           onChange={onChangeHandler}
         />
-        <Button> Enviar </Button>
+        <Button> Iniciar Compra </Button>
       </form>
     </div>
   );
