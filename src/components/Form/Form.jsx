@@ -13,7 +13,7 @@ const initialState = {
   name: "",
   lastName: "",
   address: "",
-  email: ",",
+  email: "",
 };
 
 const Form = () => {
