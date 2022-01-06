@@ -3,6 +3,7 @@
 Este proyecto sera un e-commerce de venta de Indumentaria.
 
 Demo:
+
 ![Placard_de_Narnia](https://user-images.githubusercontent.com/87288281/148313241-13c160db-82fb-4b76-84ad-4973dc1c4932.gif)
 
 # Technologies
