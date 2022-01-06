@@ -18,8 +18,6 @@ import Cart from "./views/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemsListContainer/ItemListContainer";
 
-//import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-
 const App = () => {
   return (
     <CartContextProvider>
