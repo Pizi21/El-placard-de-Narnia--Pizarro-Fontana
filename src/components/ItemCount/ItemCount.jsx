@@ -5,16 +5,13 @@ import "./itemCount.css";
 
 //const stock= 10;
 
-const ItemCount = ({stock, initial, onAdd, changeButton}) => {
-
-    
-
+const ItemCount = ({stock, initial, onAdd}) => {
     const [counter, setCounter] = useState(initial);
 
     const handlerCounterUp =()=>{
         if ( counter < stock ){
       setCounter(counter + 1);
-    };
+    }
 };
 
 const handlerCounterDown =()=>{
@@ -29,9 +26,8 @@ const handlerOnAdd =()=>{
   setCounter(0)
 }
 
-
     return (
-        
+
         <div>
           
           
